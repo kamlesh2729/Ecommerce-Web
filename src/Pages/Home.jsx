@@ -1,30 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-import Axio from 'axios'
-import Products from '../Components/Products'
+import Hero from '../Components/Hero'
 
 const Home = () => {
-let [data, setData] = useState([])
-
-  const api = "https://fakestoreapi.com/products";
-  
-  const GetAllproducts = async () => {
-  try {
-    const products = await Axio.get(api);
-    // console.log(products.data);
-    setData(products);
-  } catch (error) {
-    console.log(error)
-  }
-  }
-
-  useEffect(() => {
-    GetAllproducts();
-  },[data])
 
   return (
     <div className=' pt-12 relative'>
-      <Products/>
+      <Hero />
+      <h3>Products We are Proud of</h3>
     </div>
   )
 }

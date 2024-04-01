@@ -106,8 +106,8 @@ module.exports = {
         ft1t: "27fr 21fr",
         ft2t: "21fr 21fr",
         com: "1fr",
-        con: "1fr 1fr",
-        mod: "1fr 1fr 1fr",
+        con: "1fr 1fr 1fr",
+        mod: "280px 280px 280px 280px",
       },
       gridTemplateRows: {
         inp: "27fr 21fr 21fr 21fr",

@@ -98,7 +98,7 @@ const Navbar = () => {
         <div className="w-full lg:max-w-8lx bg-transparent top-0 left-0 right-0 h-auto mx-auto my-0 px-8 py-11 flex justify-between items-center z-50">
           <div className="w-57">
             <Link to="/">
-              logo
+              Regalo
               {/* <img src={Logo} alt="logo" className="w-full h-full" /> */}
             </Link>
           </div>
