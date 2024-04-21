@@ -115,6 +115,7 @@ module.exports = {
         ftT: "1fr",
         mod: "1fr 1fr 1fr",
         aut: "auto",
+        aut2: "auto auto",
         aut3: "auto auto auto",
       },
       gap: {

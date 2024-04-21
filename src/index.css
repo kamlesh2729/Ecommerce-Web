@@ -17,6 +17,11 @@
   background-color: rgb(255, 122, 46);
 }
 
+.scrollbarh::-webkit-scrollbar{
+display: none;
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
