@@ -147,10 +147,16 @@ const Navbar = () => {
           </ul>
 
           <div className="h-10 gap-10 font-semibold text-p font-text hidden items-center lg:flex">
-            <Link className="text-black cursor-pointer hover:text-text-orange">
+            <Link
+              to="/Auth"
+              className="text-black cursor-pointer hover:text-text-orange"
+            >
               Sign In
             </Link>
-            <Link className=" bg-text-orange text-white py-6 px-12 rounded shadow-3xt hover:shadow-3xr hover:bg-text-orange">
+            <Link
+              to="/Auth"
+              className=" bg-text-orange text-white py-6 px-12 rounded shadow-3xt hover:shadow-3xr hover:bg-text-orange"
+            >
               Register
             </Link>
           </div>

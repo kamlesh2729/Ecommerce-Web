@@ -6,6 +6,7 @@ import About from "./Pages/About";
 import Models from "./Pages/Products";
 import Testimonials from "./Pages/Testimonials";
 import Contact from "./Pages/Contact";
+import Auth from "./Pages/Auth";
 
 const AllRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AllRoutes = () => {
       <Route exact path="/Models" element={<Models />} />
       <Route exact path="/Testimonials" element={<Testimonials />} />
       <Route exact path="/Contact" element={<Contact />} />
+      <Route exact path="/Auth" element={<Auth />} />
       AllRoutes
     </Routes>
   );

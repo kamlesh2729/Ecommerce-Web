@@ -38,7 +38,7 @@ const Contact = () => {
                 <TbLocation className="text-bt" /> &nbsp; India
               </a>
             </aside>
-            <aside className="flex flex-col">
+            <div className="flex flex-col">
               <form className=" flex flex-col">
                 <label htmlFor="Fname" className="text-p font-semibold mb-4">
                   Full Name <b className=" text-text-orange">*</b>
@@ -75,7 +75,7 @@ const Contact = () => {
                   <TbMailOpened className="text-bt" /> &nbsp; Send Message
                 </button>
               </form>
-            </aside>
+            </div>
           </article>
         </main>
       </section>
