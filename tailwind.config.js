@@ -140,7 +140,7 @@ module.exports = {
       },
       screens: {
         "mb-s": "319px",
-        "Lp-l": "1440px",
+        "Lp-l": "1020px",
         "4k": "2560px",
       },
     },

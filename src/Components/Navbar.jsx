@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import Logo from "../Assets/logo/regalo_logo.png"
 import { TbMenu2, TbLetterX } from "react-icons/tb";
 import { IoPersonSharp } from "react-icons/io5";
 import { HiMiniHome } from "react-icons/hi2";
@@ -98,8 +99,7 @@ const Navbar = () => {
         <div className="w-full lg:max-w-8lx bg-transparent top-0 left-0 right-0 h-auto mx-auto my-0 px-8 py-11 flex justify-between items-center z-50">
           <div className="w-57">
             <Link to="/">
-              Regalo
-              {/* <img src={Logo} alt="logo" className="w-full h-full" /> */}
+              <img src={Logo} alt="regalo-logo" className="w-full h-full" />
             </Link>
           </div>
 
@@ -122,7 +122,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/Models"
+                to="/Product"
                 className="text-pn font-text font-semibold text-black no-underline cursor-pointer hover:text-text-orange"
               >
                 Products
