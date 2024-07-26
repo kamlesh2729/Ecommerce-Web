@@ -21,17 +21,17 @@ const TrendingSlider = () => {
 
   return (
     <>
-      <section className=" my-8 w-[90vw] mx-auto">
+      <section className=" w-[90%] Lp-l:max-w-8lx my-16 mx-auto py-8">
         <div className="flex items-center justify-between">
           <h3 className=" py-8 text-h3 font-semibold">
             Products That are Trending
           </h3>
           <div className=" text-h3 font-semibold flex gap-8">
-            <button title="scroll-left" onClick={slideLeft}>
-              <BsArrowLeftSquareFill/>
+            <button title="scroll-left" className="text-blue-500" onClick={slideLeft}>
+              <BsArrowLeftSquareFill />
             </button>
-            <button title="scroll-right" onClick={slideRight}>
-            <BsArrowRightSquareFill/>
+            <button title="scroll-right" className="text-blue-500" onClick={slideRight}>
+              <BsArrowRightSquareFill />
             </button>
           </div>
         </div>

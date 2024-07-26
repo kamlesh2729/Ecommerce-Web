@@ -1,56 +1,60 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
+import Flogo from "../Assets/logo/regalo_logo.png"
 import { TbMail } from "react-icons/tb";
 import { TbPhone } from "react-icons/tb";
 
 const Footer = () => {
   return (
-    <footer>
-      <section className="my-0 mx-auto max-w-8lx py-0 px-10">
+    <footer className="mt-16 py-4">
+      <section className="Lp-l:max-w-8lx mx-auto py-0">
         <article className=" grid grid-cols-com lg:grid-cols-inp sm:grid-cols-ft2t sm:text-left gap-32 justify-center text-center lg:text-left text-black">
           <ul className="list-none">
-            <li className=" text-h3 mb-6">
-              <span className=" font-bold">Ecommerce </span> 
+            <li className=" text-h3 mb-6 text-center">
+              <Link to='/'>
+              <img src={Flogo} alt="regalo-footer-logo" className=" h-32 Lp-l:h-16 mx-auto" />
+              </Link>
             </li>
             <li className=" mb-12 leading-7 text-slate-500 text-p">
-              We offer a big range of products for all your needs. We
-              have the perfect product to meet your needs.
+              We offer a big range of products for all your needs. We have the
+              perfect product to meet your needs.
             </li>
             <li className="text-p font-text font-medium mb-8">
               <a
                 href="tel:9988776600"
-                className=" no-underline flex items-center justify-center sm:justify-start lg:justify-start text-text-black transition-all hover:text-text-orange"
+                className=" no-underline flex items-center justify-center sm:justify-start lg:justify-start text-text-black transition-all hover:text-blue-500"
               >
                 <TbPhone className="text-bt" /> &nbsp; +91 9988776600
               </a>
             </li>
-            <li className=" text-p font-text font-medium mb-8">
+            <li className=" text-p font-text text-center font-medium mb-8">
               <a
                 href="mailto:Zoomcarrental@gmail.com"
-                className=" no-underline flex items-center justify-center sm:justify-start lg:justify-start text-text-black transition-all hover:text-text-orange"
+                className=" no-underline flex items-center justify-center sm:justify-start lg:justify-start text-text-black transition-all hover:text-blue-500"
               >
-                <TbMail className="text-bt" /> &nbsp; Ecommerceweb@gmail.com
+                <TbMail className="text-bt" /> &nbsp; Regaloweb@gmail.com
               </a>
             </li>
             <li></li>
           </ul>
           <ul className=" list-none">
-            <li className=" text-h3 font-bold mb-6 uppercase font-titles cursor-auto">
+            <li className=" text-h3 font-bold mb-6 uppercase font-titles">
               Company
             </li>
-            <li className="text-text-black mb-4 text-p transition-all hover:text-text-orange">
+            <li className="text-text-black mb-4 text-p cursor-pointer transition-all hover:text-blue-500">
               India
             </li>
-            <li className="text-text-black mb-4 text-p transition-all hover:text-text-orange">
+            <li className="text-text-black mb-4 text-p cursor-pointer transition-all hover:text-blue-500">
               Careers
             </li>
-            <li className="text-text-black mb-4 text-p transition-all hover:text-text-orange">
+            <li className="text-text-black mb-4 text-p cursor-pointer transition-all hover:text-blue-500">
               Mobile
             </li>
-            <li className="text-text-black mb-4 text-p transition-all hover:text-text-orange">
+            <li className="text-text-black mb-4 text-p cursor-pointer transition-all hover:text-blue-500">
               Blog
             </li>
-            <li className="text-text-black mb-4 text-p transition-all hover:text-text-orange">
+            <li className="text-text-black mb-4 text-p cursor-pointer transition-all hover:text-blue-500">
               How we work
             </li>
           </ul>
@@ -79,7 +83,7 @@ const Footer = () => {
             </li>
             <li className="mb-4 text-p">
               <button
-                className="no-underline text-white font-bold bg-text-orange py-6 px-10 rounded-md shadow-3xt transition-all border-2 border-solid border-text-orange text-p cursor-pointer w-full hover:shadow-3xr hover:bg-text-orange"
+                className="no-underline text-white font-bold bg-blue-500 py-6 px-10 rounded-md shadow-3xt transition-all border-2 border-solid border-blue-500 text-p cursor-pointer w-full hover:shadow-3xr hover:bg-blue-500"
                 type="submit"
               >
                 Submit

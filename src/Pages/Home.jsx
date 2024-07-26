@@ -3,6 +3,7 @@ import React from 'react'
 import Hero from '../Components/Hero'
 import Proudproducts from '../Components/Proudproducts'
 import TrendingSlider from '../Components/TrendingSlider'
+import Testimonials from '../Components/Testimonials'
 
 const Home = () => {
 
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <Proudproducts />
       <TrendingSlider/>
+      <Testimonials/>
     </div>
   )
 }

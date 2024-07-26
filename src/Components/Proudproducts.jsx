@@ -20,18 +20,18 @@ const Proudproducts = () => {
 
   useEffect(() => {
     GetAllproducts();
-  }, [data]);
+  }, []);
 
   const ProudProduct = data.filter((item) => item.id <= 8);
 
   return (
     <>
-      <section className=" my-8 w-[92vw] mx-auto">
+      <section className=" w-[90%] Lp-l:max-w-8lx my-16 mx-auto py-8">
         <h3 className=" py-8 text-h3 font-semibold">
           Products We are Proud of
         </h3>
         <div className="h-auto">
-          <div className="w-[90vw] h-auto mx-auto pl-[0.18rem] grid grid-cols-mod grid-rows-aut2 gap-4 py-4">
+          <div className="w-[90vw] h-auto mx-auto pl-[0.18rem] grid grid-cols-com Lp-l:grid-cols-mod Lp-l:grid-rows-proud gap-7 py-4">
             {ProudProduct.map((product) => {
               const { id, image, price, title } = product;
               return (
@@ -39,12 +39,18 @@ const Proudproducts = () => {
                   key={id}
                   className=" bg-white h-auto px-2 py-4 flex flex-col border-2 border-gray-400 hover:border-slate-500 rounded-md items-center"
                 >
-                  <img src={image} alt="product images" className=" h-[200px] w-[200px]" />
-                  <span className=" font-medium overflow-hidden w-full text-3xl h-10 my-4">{title}</span>
-                  <h2 className=" font-semibold text-4h w-full">{price}$</h2>
+                  <img
+                    src={image}
+                    alt="product images"
+                    className=" h-[180px] w-[120px] object-center"
+                  />
+                  <span className=" font-medium overflow-hidden w-full text-3xl h-10 mt-8">
+                    {title}
+                  </span>
+                  <h2 className=" font-semibold text-4h w-full mt-6">{price}$</h2>
                 </div>
               );
-          })}
+            })}
           </div>
         </div>
       </section>

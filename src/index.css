@@ -14,7 +14,7 @@
 
 *::-webkit-scrollbar-thumb {
   border-radius: 20px;
-  background-color: rgb(255, 122, 46);
+  background-color: rgb(59, 130, 246);
 }
 
 .scrollbarh::-webkit-scrollbar{
@@ -52,5 +52,23 @@ footer {
 .coloreDBtn {
   background-color: #ff4d30;
   color: white;
+}
+
+@media screen and (min-width: 1020px) {
+.gc{
+  grid-template-areas: 'one two four' 'one two four-low';
+  }
+.go{
+  grid-area: one;
+}
+.gt{
+  grid-area: two;
+}
+.gtu{
+  grid-area: four;
+}
+.gtl{
+  grid-area: four-low;
+}
 }
 
