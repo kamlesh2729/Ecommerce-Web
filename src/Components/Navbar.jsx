@@ -21,6 +21,7 @@ const Navbar = () => {
   // }
 
   // userCheck();
+  let User = 1;
     const openMenu = () => {
     setNavb(!navB);
     };
@@ -134,29 +135,19 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="h-10 gap-10 font-semibold text-p font-text hidden items-center lg:flex">
-            {/* {user ? <><Link to="/Auth"
-              className="text-black cursor-pointer hover:text-blue-500">
-              Sign In </Link></> : 
-              <> <Link to="/Auth"
-              className=" bg-blue-500 text-white py-6 px-12 rounded shadow-3xt hover:shadow-3xr hover:bg-blue-500">
-              Registerb </Link>
-              </>} */}
-            <Link
-              to="/Auth"
-              className="text-black cursor-pointer hover:text-blue-500"
-            >
-              Sign In
-            </Link>
-            <Link
-              to="/Auth"
-              className=" bg-blue-500 text-white py-6 px-12 rounded shadow-3xt shadow-blue-300 hover:shadow-3xr hover:shadow-blue-500 hover:bg-blue-500"
-            >
-              Sign Up
-            </Link>
+          <div className="h-8 gap-10 font-semibold text-p font-text hidden items-center lg:flex">
+            {User ? <Link to="/Auth"
+              className="bg-blue-500 text-white py-4 px-10 rounded shadow-3xt shadow-blue-300 hover:shadow-3xr hover:shadow-blue-500 hover:bg-blue-500">
+              Log out </Link>
+              : 
+              <Link to="/Auth"
+              className=" bg-blue-500 text-white py-5 px-10 rounded shadow-3xt shadow-blue-300 hover:shadow-3xr hover:shadow-blue-500 hover:bg-blue-500">
+              Log In </Link>
+              }
+  
           </div>
 
-          <Link to="" className=" absolute right-32 Lp-l:right-12">
+          <Link to="/Cart" className=" absolute right-32 Lp-l:right-[21rem]">
             <button className=" cursor-pointer text-bh2 hover:text-blue-500">
               <TbShoppingCart />
             </button>

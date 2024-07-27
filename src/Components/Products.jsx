@@ -15,8 +15,21 @@ const Products = () => {
   const FilteredProduct = (cat) => {
   const CategoryFil = data.filter((data) => data.category === cat);
   setProductCat(CategoryFil);
+  }
   
-}
+  const AddtoLocalcart = () => {
+    localStorage.setItem("cart", JSON.stringify(data));
+  }
+
+  const GetLocalcart = () => {
+    let Cart = localStorage.getItem("cart");
+    // console.log(Cart);
+    if (Cart) {
+      return JSON.parse(localStorage.getItem("cart"));
+    } else {
+      return [];
+    }
+  }
 
 
   useEffect(() => {
@@ -29,7 +42,8 @@ const Products = () => {
       console.log(error);
     }
     };
-      GetAllproducts();
+    GetAllproducts();
+    GetLocalcart();
   }, []);
 
   return (
@@ -127,9 +141,9 @@ const Products = () => {
             return (
               <div
                 key={id}
-                className=" w-[80%] Lp-l:w-auto h-auto px-2 py-2 mx-auto Lp-l:mx-0 flex flex-col justify-center items-center border-2 hover:border-black rounded-md"
+                className=" w-[80%] Lp-l:w-auto h-auto px-2 py-6 Lp-l:py-2 mx-auto Lp-l:mx-0 flex flex-col justify-center items-center border-2 hover:border-black rounded-md"
               >
-                <Link to="/Sproduct" className="w-[100%] Lp-l:w-auto">
+                <Link to="/Sproduct" className="w-full Lp-l:w-auto h-auto flex flex-col justify-center items-center rounded-md">
                   <div className="w-[280px] h-[160px] inline-flex justify-center">
                     <img
                       src={image}
@@ -141,7 +155,7 @@ const Products = () => {
                     {title}
                   </div>
                   <span className="text-black my-1 text-bh2">${price}</span>
-                  <button className="w-[250px] text-4h font-semibold p-3 rounded-md bg-white border-2 border-black border-solid text-black hover:bg-blue-500 hover:text-white hover:border-blue-500">
+                  <button onClick={AddtoLocalcart} className="w-[250px] Lp-l:w-[200px] text-4h font-semibold p-3 rounded-md bg-white border-2 border-black border-solid text-black hover:bg-blue-500 hover:text-white hover:border-blue-500">
                     Add to Cart
                   </button>
                 </Link>

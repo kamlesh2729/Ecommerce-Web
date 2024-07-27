@@ -8,6 +8,7 @@ import Testimonials from "./Components/Testimonials";
 import Contact from "./Pages/Contact";
 import Auth from "./Pages/Auth";
 import Sproduct from "./Components/Singleproduct";
+import Cart from "./Components/Cart";
 
 const AllRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AllRoutes = () => {
       <Route exact path="/About" element={<About />} />
       <Route exact path="/Product" element={<Products />} />
       <Route exact path="/Sproduct" element={<Sproduct />} />
+      <Route exact path="/Cart" element={<Cart />} />
       <Route exact path="/Testimonials" element={<Testimonials />} />
       <Route exact path="/Contact" element={<Contact />} />
       <Route exact path="/Auth" element={<Auth />} />
