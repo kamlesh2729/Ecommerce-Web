@@ -1,13 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+
+import { login } from "../Actions/authauction";
 
 const Login = () => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    console.log({ email, password });
+    dispatch(login({ email, password }, navigate));
+  }
+
   return (
     <>
-      <section className="flex flex-col w-3/5 px-36 mx-auto">
-        <h1 className=" uppercase font-semibold text-h4 mx-auto">
+      <section className=" w-[80vw] h-[70vh] flex flex-col justify-center items-center mx-auto login-bg relative z-3">
+        <h1 className=" uppercase font-semibold text-h4 mx-auto absolute z-3 top-0">
           Log In here
         </h1>
-        <form className=" flex flex-col">
+        <form className=" flex flex-col absolute z-3" onSubmit={handelSubmit}>
           <label htmlFor="Email" className="text-p font-semibold mb-4">
             Email<b className=" text-blue-500">*</b>
           </label>
@@ -16,6 +33,9 @@ const Login = () => {
             type="email"
             name="email"
             id="Email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
           />
           <label htmlFor="msg" className="text-p font-semibold mb-4">
             Passaword<b className=" text-blue-500">*</b>
@@ -25,6 +45,9 @@ const Login = () => {
             type="password"
             name="password"
             id="Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
 
           <button

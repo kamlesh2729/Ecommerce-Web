@@ -9,7 +9,7 @@ const Products = () => {
   // const [ loading, setLoading] = useState(false);
   // let componenMounted = true;
   let filter = productcat;
-  
+
   const api = "https://fakestoreapi.com/products";
 
   const FilteredProduct = (cat) => {
@@ -137,25 +137,33 @@ const Products = () => {
 
         <div className="w-full h-auto justify-center items-center grid grid-cols-com Lp-l:grid-cols-mod Lp-l:grid-rows-aut3 gap-6 py-8 mt-8">
           {filter.map((product) => {
-            const { id, title, price, image } = product;
+            // const { id, title, price, image } = product;
             return (
               <div
-                key={id}
+                key={product.id}
                 className=" w-[80%] Lp-l:w-auto h-auto px-2 py-6 Lp-l:py-2 mx-auto Lp-l:mx-0 flex flex-col justify-center items-center border-2 hover:border-black rounded-md"
               >
-                <Link to="/Sproduct" className="w-full Lp-l:w-auto h-auto flex flex-col justify-center items-center rounded-md">
+                <Link
+                  to={`/Sproduct/${product.id}`}
+                  className="w-full Lp-l:w-auto h-auto flex flex-col justify-center items-center rounded-md"
+                >
                   <div className="w-[280px] h-[160px] inline-flex justify-center">
                     <img
-                      src={image}
+                      src={product.image}
                       alt="product-img"
                       className=" h-[140px] w-[140px] my-2 mix-blend-multiply"
                     />
                   </div>
-                  <div className="text-black w-[250px] h-10 my-2 text-4h text-center overflow-hidden">
-                    {title}
+                  <div className="text-black w-[250px] h-10 my-2 text-4h text-center overflow-hidden" >
+                    {product.title}
                   </div>
-                  <span className="text-black my-1 text-bh2">${price}</span>
-                  <button onClick={AddtoLocalcart} className="w-[250px] Lp-l:w-[200px] text-4h font-semibold p-3 rounded-md bg-white border-2 border-black border-solid text-black hover:bg-blue-500 hover:text-white hover:border-blue-500">
+                  <span className="text-black my-1 text-bh2" >
+                    ${product.price}
+                  </span>
+                  <button
+                    onClick={AddtoLocalcart}
+                    className="w-[250px] Lp-l:w-[200px] text-4h font-semibold p-3 rounded-md bg-white border-2 border-black border-solid text-black hover:bg-blue-500 hover:text-white hover:border-blue-500"
+                  >
                     Add to Cart
                   </button>
                 </Link>
