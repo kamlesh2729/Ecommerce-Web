@@ -1,50 +1,41 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+// import { Link } from "react-router-dom";
 
-import Axio from "axios";
+import { productContext } from '../Contexts/ProductContext';
+import AllProducts from './Productspage/product';
 
 const Products = () => {
-  const [data, setData] = useState([]);
-  const [productcat, setProductCat] = useState(data);
   // const [ loading, setLoading] = useState(false);
   // let componenMounted = true;
+  
+  const { products } = useContext(productContext);
+  const [productcat, setProductCat] = useState(products);
+
   let filter = productcat;
 
-  const api = "https://fakestoreapi.com/products";
-
-  const FilteredProduct = (cat) => {
-  const CategoryFil = data.filter((data) => data.category === cat);
-  setProductCat(CategoryFil);
+  const filterProduct = (cat) => {
+    const productCat = products.filter((item) => item.category === cat);
+    setProductCat(productCat);
   }
   
-  const AddtoLocalcart = () => {
-    localStorage.setItem("cart", JSON.stringify(data));
-  }
-
-  const GetLocalcart = () => {
-    let Cart = localStorage.getItem("cart");
-    // console.log(Cart);
-    if (Cart) {
-      return JSON.parse(localStorage.getItem("cart"));
-    } else {
-      return [];
-    }
-  }
+  useEffect(() => { 
+    setProductCat(products);
+  } ,[products]);
 
 
-  useEffect(() => {
-    const GetAllproducts = async () => {
-      try {
-      const products = await Axio.get(api);
-      setData( await products.data);
-      setProductCat( await products.data);
-    } catch (error) {
-      console.log(error);
-    }
-    };
-    GetAllproducts();
-    GetLocalcart();
-  }, []);
+  // const AddtoLocalcart = () => {
+  //   localStorage.setItem("cart", JSON.stringify(data));
+  // }
+
+  // const GetLocalcart = () => {
+  //   let Cart = localStorage.getItem("cart");
+  //   // console.log(Cart);
+  //   if (Cart) {
+  //     return JSON.parse(localStorage.getItem("cart"));
+  //   } else {
+  //     return [];
+  //   }
+  // }
 
   return (
     <>
@@ -71,35 +62,35 @@ const Products = () => {
           </div> */}
           <button
             className=" text-4h font-medium px-2 rounded-md bg-gray-100 text-black hover:bg-gray-200 hover:text-black"
-            onClick={() => setProductCat(data)}
+            onClick={() => setProductCat(products)}
           >
             All
           </button>
 
           <button
             className=" text-4h font-medium px-2 rounded-md bg-gray-100 text-black hover:bg-gray-200 hover:text-black"
-            onClick={() => FilteredProduct("men's clothing")}
+            onClick={() => filterProduct("men's clothing")}
           >
             men's clothing
           </button>
 
           <button
             className=" text-4h font-medium px-2 rounded-md bg-gray-100 text-black hover:bg-gray-200 hover:text-black"
-            onClick={() => FilteredProduct("women's clothing")}
+            onClick={() => filterProduct("women's clothing")}
           >
             women's clothing
           </button>
 
           <button
             className=" text-4h font-medium px-2 rounded-md bg-gray-100 text-black hover:bg-gray-200 hover:text-black"
-            onClick={() => FilteredProduct("jewelery")}
+            onClick={() => filterProduct("jewelery")}
           >
             jewelery
           </button>
 
           <button
             className=" text-4h font-medium px-2 rounded-md bg-gray-100 text-black hover:bg-gray-200 hover:text-black"
-            onClick={() => FilteredProduct("electronics")}
+            onClick={() => filterProduct("electronics")}
           >
             electronics
           </button>
@@ -135,40 +126,9 @@ const Products = () => {
           </button> */}
         </div>
 
-        <div className="w-full h-auto justify-center items-center grid grid-cols-com Lp-l:grid-cols-mod Lp-l:grid-rows-aut3 gap-6 py-8 mt-8">
+        <div className="h-auto Lp-l:w-full mx-auto justify-center items-center grid grid-cols-com Lp-l:grid-cols-mod Lp-l:grid-rows-aut3 gap-6 py-8 mt-8">
           {filter.map((product) => {
-            // const { id, title, price, image } = product;
-            return (
-              <div
-                key={product.id}
-                className=" w-[80%] Lp-l:w-auto h-auto px-2 py-6 Lp-l:py-2 mx-auto Lp-l:mx-0 flex flex-col justify-center items-center border-2 hover:border-black rounded-md"
-              >
-                <Link
-                  to={`/Sproduct/${product.id}`}
-                  className="w-full Lp-l:w-auto h-auto flex flex-col justify-center items-center rounded-md"
-                >
-                  <div className="w-[280px] h-[160px] inline-flex justify-center">
-                    <img
-                      src={product.image}
-                      alt="product-img"
-                      className=" h-[140px] w-[140px] my-2 mix-blend-multiply"
-                    />
-                  </div>
-                  <div className="text-black w-[250px] h-10 my-2 text-4h text-center overflow-hidden" >
-                    {product.title}
-                  </div>
-                  <span className="text-black my-1 text-bh2" >
-                    ${product.price}
-                  </span>
-                  <button
-                    onClick={AddtoLocalcart}
-                    className="w-[250px] Lp-l:w-[200px] text-4h font-semibold p-3 rounded-md bg-white border-2 border-black border-solid text-black hover:bg-blue-500 hover:text-white hover:border-blue-500"
-                  >
-                    Add to Cart
-                  </button>
-                </Link>
-              </div>
-            );
+            return <AllProducts product={product} key={product.id} />;
           })}
         </div>
       </section>
