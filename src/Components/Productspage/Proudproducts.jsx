@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 import Axio from "axios";
+import { Link } from "react-router-dom";
 
 const Proudproducts = () => {
 
   let [data, setData] = useState([]);
+  
 
   const api = "https://fakestoreapi.com/products";
 
   const GetAllproducts = async () => {
     try {
       const products = await Axio.get(api);
-      // console.log(products.data);
       setData(products.data);
     } catch (error) {
       console.log(error);
@@ -37,17 +38,19 @@ const Proudproducts = () => {
               return (
                 <div
                   key={id}
-                  className=" bg-white h-auto px-2 py-4 flex flex-col border-2 border-gray-400 hover:border-slate-500 rounded-md items-center"
+                  className=" bg-white h-auto px-2 py-1 flex flex-col border-2 border-gray-400 hover:border-slate-500 rounded-md items-center"
                 >
                   <img
                     src={image}
                     alt="product images"
-                    className=" h-[180px] w-[120px] object-center"
-                  />
-                  <span className=" font-medium overflow-hidden w-full text-3xl h-10 mt-8">
+                    className=" h-[160px] w-[120px] mt-4 object-center hover:scale-110 transition duration-300"
+                    />
+                  <Link to={`/Sproduct/${id}`} className=" w-full h-10 mt-8 pl-4 overflow-hidden">
+                  <span className=" font-medium text-3xl">
                     {title}
                   </span>
-                  <h2 className=" font-semibold text-4h w-full mt-6">{price}$</h2>
+                  </Link>
+                  <h2 className=" font-semibold text-4h w-full mt-6 pl-4">{price}$</h2>
                 </div>
               );
             })}

@@ -146,7 +146,9 @@ module.exports = {
       },
       screens: {
         "mb-s": "319px",
-        "Lp-l": "1020px",
+        "tab": "768px",
+        "Lp-l": "1024px",
+        "desk": "1200px",
         "4k": "2560px",
       },
     },

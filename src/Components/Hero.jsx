@@ -17,9 +17,9 @@ const Hero = () => {
               <img
                 src={Men}
                 alt="Men's-shopping"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-110 transition duration-300"
               />
-              <p className="font-bold text-blue-500 text-bh2 absolute bottom-4 left-6 z-5">
+              <p className="font-bold text-white text-bh2 absolute bottom-4 left-6 z-5">
                 Men's Clothing
               </p>
             </Link>
@@ -31,9 +31,11 @@ const Hero = () => {
               <img
                 src={Women}
                 alt="women's-shopping"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-110 transition duration-300"
               />
-              <p className="font-bold text-blue-500 text-bh2 absolute bottom-4 left-6 z-5">Women's Clothing</p>
+              <p className="font-bold text-white text-bh2 absolute bottom-4 left-6 z-5">
+                Women's Clothing
+              </p>
             </Link>
           </div>
 
@@ -43,9 +45,9 @@ const Hero = () => {
               <img
                 src={Jewelery}
                 alt="Jewelery-img"
-                className="w-full h-full"
+                className="w-full h-full hover:scale-110 transition duration-300"
               />
-              <p className="font-semibold text-blue-500 text-bh2 absolute bottom-4 left-2 Lp-l:left-6 z-5">
+              <p className="font-semibold text-white text-bh2 absolute bottom-4 left-2 Lp-l:left-6 z-5">
                 Jewelery
               </p>
             </Link>
@@ -57,9 +59,9 @@ const Hero = () => {
               <img
                 src={Electronics}
                 alt="Jewelery-img"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-110 transition duration-300"
               />
-              <p className="font-semibold text-blue-500 text-bh2 absolute bottom-4 left-2 Lp-l:left-6 z-5">
+              <p className="font-semibold text-white text-bh2 absolute bottom-4 left-2 Lp-l:left-6 z-5">
                 Electronics
               </p>
             </Link>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "../Assets/logo/regalo_logo.png"
@@ -8,11 +8,14 @@ import { HiMiniHome } from "react-icons/hi2";
 import { FcAbout } from "react-icons/fc";
 import { FaCarSide } from "react-icons/fa";
 import { RiContactsFill } from "react-icons/ri";
+import { slidebarContext } from "../Contexts/SliderbarContext";
 
 const Navbar = () => {
 
   const [navB, setNavb] = useState(false);
   // let [user, setUser] = useState(true);
+  const { isopen, setIsOpen } = useContext(slidebarContext);
+
   
   // setUser = false;
 
@@ -136,22 +139,26 @@ const Navbar = () => {
           </ul>
 
           <div className="h-8 gap-10 font-semibold text-p font-text hidden items-center lg:flex">
-            {User ? <Link to="/Auth"
-              className="bg-blue-500 text-white py-4 px-10 rounded shadow-3xt shadow-blue-300 hover:shadow-3xr hover:shadow-blue-500 hover:bg-blue-500">
-              Log out </Link>
-              : 
-              <Link to="/Auth"
-              className=" bg-blue-500 text-white py-5 px-10 rounded shadow-3xt shadow-blue-300 hover:shadow-3xr hover:shadow-blue-500 hover:bg-blue-500">
-              Log In </Link>
-              }
-  
+            {User ? (
+              <Link
+                to="/Auth"
+                className="bg-blue-500 text-white py-4 px-10 rounded shadow-3xt shadow-blue-300 hover:shadow-3xr hover:shadow-blue-500 hover:bg-blue-500"
+              >
+                Log In{" "}
+              </Link>
+            ) : (
+              <Link
+                to="/Auth"
+                className=" bg-blue-500 text-white py-5 px-10 rounded shadow-3xt shadow-blue-300 hover:shadow-3xr hover:shadow-blue-500 hover:bg-blue-500"
+              >
+                Log Out{" "}
+              </Link>
+            )}
           </div>
 
-          <Link to="/Cart" className=" absolute right-32 Lp-l:right-[21rem]">
-            <button className=" cursor-pointer text-bh2 hover:text-blue-500">
+            <button onClick={()=>setIsOpen(!isopen)} className=" absolute right-32 Lp-l:right-[21rem] cursor-pointer text-bh2 hover:text-blue-500">
               <TbShoppingCart />
             </button>
-          </Link>
 
           <button
             className=" text-bh2 absolute top-14 right-14 cursor-pointer hover:text-blue-500 lg:hidden xl:hidden 2xl:hidden transition duration-all"

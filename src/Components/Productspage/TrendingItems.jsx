@@ -30,11 +30,15 @@ const TrendingItems = () => {
         return (
           <div
             key={id}
-            className="cursor-pointer w-[210px] border-2 border-gray-400 hover:border-slate-500 rounded-md items-center"
+            className=" w-[210px] Lp-l:w-[210px] cursor-pointer border-2 border-gray-400 hover:border-slate-500 rounded-md items-center"
           >
-            <Link>
+            <Link to={`/Sproduct/${id}`}>
               <div className=" text-center py-8">
-                <img src={image} alt="product images" className=" h-[150px] w-[150px] mx-auto" />
+                <img
+                  src={image}
+                  alt="product images"
+                  className=" h-[150px] w-[150px] mx-auto hover:scale-110 transition duration-300"
+                />
               </div>
               <div className=" text-4h p-4 w-[21rem]">
                 <p className=" font-medium overflow-hidden w-full text-3xl h-10 my-4 pr-2">

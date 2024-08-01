@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 // import { Link } from "react-router-dom";
 
-import { productContext } from '../Contexts/ProductContext';
-import AllProducts from './Productspage/product';
+import { productContext } from '../../Contexts/ProductContext';
+import AllProducts from './product';
 
 const Products = () => {
   // const [ loading, setLoading] = useState(false);
