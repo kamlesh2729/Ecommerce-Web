@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 
 import { TbLetterX, TbArrowNarrowRight } from "react-icons/tb";
 import { cartContext } from '../Contexts/CartContext';
@@ -6,25 +6,11 @@ import { slidebarContext } from '../Contexts/SliderbarContext';
 
 const Cart = () => {
 
-  const { cart, setCart, incressQty, decreaseQty, itemAmount, total } =
+  const { cart, removeTocart, incressQty, decreaseQty, itemAmount, total } =
     useContext(cartContext);
   
   const { isopen, isClose } = useContext(slidebarContext);
-
-  const [deleteItem, setDeleteItem] = useState(cart);
-  console.log(cart);
-
-  const removeFromCart = (id) => {
-    const updateCart = cart.filter((item) => item.id === id);
-    setDeleteItem(updateCart);
-    const json = JSON.stringify(cart.id);
-    localStorage.removeItem("cartItem", json);
-  };
-
-   useEffect(() => {
-     setCart(deleteItem);
-   }, [deleteItem, setCart]);
-
+  
 
   return (
     <>
@@ -85,7 +71,7 @@ const Cart = () => {
                 {/* <div className=" Lp-l:w-auto Lp-l:h-[20vh] flex justify-evenly Lp-l:flex-col gap-4 bg-red-200"></div> */}
                 <button
                   onClick={() => {
-                    removeFromCart(item.id);
+                    removeTocart(item.id);
                   }}
                   className="w-10 Lp-l:h-14 absolute right-1 top-1 text-h3 text-center border-black"
                 >

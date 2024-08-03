@@ -33,12 +33,6 @@ const CartProvider = ({ children }) => {
       }
   }, [setCart]);
 
-//   useEffect(() => {
-//     const item = JSON.stringify(cart);
-//     localStorage.setItem("cartItem", item);
-//   }, [cart]);
-
-
 
   const addToCart = (product, id) => {
     const newItems = { ...product, amount: 1 };
@@ -64,8 +58,6 @@ const CartProvider = ({ children }) => {
   const removeTocart = (id) => {
     const newCart = cart.filter((item) => item.id !== id);
       setCart(newCart);
-    // const json = JSON.stringify(cart.id);
-    // localStorage.removeItem("cartItem", json);
     };
     
 
@@ -97,7 +89,6 @@ const CartProvider = ({ children }) => {
     <cartContext.Provider
       value={{
         cart,
-        setCart,
         addToCart,
         removeTocart,
         incressQty,
